@@ -25,8 +25,8 @@ mounted() {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
     .then((response) => {
         this.dataDischi = response.data.response 
-        //  this.Dischi recupero info dentro data
-        // response.data.response recuperiamo l'array di tutti i 10 dischi presenti nel reponse sella chiamata GET dell'api
+        //  this.dataDischi recupero info dentro data
+        // response.data.response recuperiamo l'array di tutti i 10 dischi presenti nel reponse nella chiamata GET dell'api
     })
 }
 }
