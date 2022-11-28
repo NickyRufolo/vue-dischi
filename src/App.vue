@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderComp/>
-    <MainComp/>
+    <HeaderComp @emitGenere="funzioneGenSelected" :propsGeneri="ArrayGeneri"/>
+    <MainComp @emitGeneri="methodsListaGeneri" :propsSelectedGen="SelectGeneri"/>
   </div>
 </template>
 
@@ -22,6 +22,20 @@ export default {
   components: {
     HeaderComp,
     MainComp
+  },
+  data(){
+    return {
+      ArrayGeneri: [],
+      SelectGeneri: ""
+    }
+  },
+  methods: {
+    methodsListaGeneri(valueEmitGeneri){   //richiamo la funzione nell'emit per associare valore dell'array in Appvue
+      this.ArrayGeneri = valueEmitGeneri
+    },
+    funzioneGenSelected(valueGenselected){
+      this.SelectGeneri = valueGenselected
+    }
   }
 }
 </script>
@@ -36,3 +50,13 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+<!-- Ciao ragazzi,
+Esercizio di oggi: Vue Dischi
+nome repo: vue-dischi
+
+Descrizione:
+Continuate a lavorare nella stessa repo di ieri e aggiungete una select per filtrare i dischi in base al genere: quando l'utente seleziona un genere dalla lista, vengono visualizzati solamente i dischi con il genere corrispondente.
+
+Bonus:
+Aggiungere un ulteriore select che filtra gli album per artista. -->
